@@ -22,7 +22,7 @@ class ssh {
   }
   sshd_config { "AllowGroups":
     ensure    => present,
-    value     => ["rvm","infosec","deploy"],
+    value     => ["rvm","infosec","deploy","ubuntu"],
   }
   sshd_config { "PrintMotd":
     ensure    => present,
