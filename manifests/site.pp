@@ -1,11 +1,13 @@
 node default {
   include user
   include ssh
-  include ruby
+#  include ruby
+  include apache
 }
 class { 'fail2ban':
-  ignoreip => ['127.0.0.1', '10.0.0.1'],
-  bantime => '86400',
-  jails => ['ssh', 'ssh-ddos'],
-  maxretry => '2'
+  config_file_template     => "fail2ban/${::lsbdistcodename}/etc/fail2ban/jail.conf.erb",
+  config_file_options_hash => {
+  'bantime' => '86400',
+  'maxretry' => '2'
+ }
 }

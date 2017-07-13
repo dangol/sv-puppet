@@ -1,0 +1,28 @@
+#cloud-config
+manage_etc_hosts: True
+hostname: "agentX"
+fqdn: "agentX.madjic.net"
+
+apt_update: true
+apt_upgrade: true
+packages:
+ - clamav
+ - multitail
+ - git-core
+ - awscli
+ - tmpreaper
+ - fail2ban
+
+puppet:
+ conf:
+   agent:
+
+runcmd:
+ - aws s3 cp s3://sysboot/sv-key /root/.ssh/ --region us-east-1 --output text; chmod 400 /root/.ssh/sv-key
+ - echo "Host github.com\n  StrictHostKeyChecking no\n  IdentityFile /root/.ssh/sv-key\n" >> /root/.ssh/config
+ - BASE=/opt/puppet
+ - git clone git@github.com:dangol/sv-puppet.git $BASE
+ - cp -r /opt/puppet/modules/* /etc/puppet/modules/
+ - cp -r /opt/puppet/manifests/* /etc/puppet/manifests/
+ - [ bash, -c, "puppet apply --verbose --debug  /etc/puppet/manifests/site.pp" ]
+ final_message: "Whew! That was a lot of work and now the system is finally up, after $UPTIME seconds"
