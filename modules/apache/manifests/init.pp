@@ -1,21 +1,25 @@
-class { 'apache':
-  default_vhost => false,
-}
-apache::vhost { 'staging-bifma.scivera.com':
-  servername => 'staging-bifma.scivera.com',
-  port       => '80',
-  docroot    => '/srv/staging_bifma/current/public',
-  redirect_status => 'permanent',
-  redirect_dest   => 'https://staging-bifma.scivera.com/'
-  firewall { '100 allow http and https access':
-    dport  => [80, 443],
-    proto  => tcp,
-    action => accept,
-  }
-}
-apache::vhost { 'staging-bifma.scivera.com':
-  servername => 'staging-bifma.scivera.com',
-  port    => '443',
-  docroot => '/srv/staging_bifma/current/public',
-  ssl     => true,
+class apache2 {
+        package {'apache2':
+                ensure => present,
+        }
+
+        service {'apache2':
+                ensure => "running",
+                enable => "true",
+                require => Package["apache2"],
+        }
+
+        file { '/etc/apache2/mods-enabled/userdir.load':
+                ensure => 'link',
+                target => '/etc/apache2/mods-available/userdir.load',
+                notify => Service["apache2"],
+                require => Package["apache2"],
+        }
+
+        file { '/etc/apache2/mods-enabled/userdir.conf':
+                ensure => 'link',
+                target => '/etc/apache2/mods-available/userdir.conf',
+                notify => Service["apache2"],
+                require => Package["apache2"],
+        }
 }
