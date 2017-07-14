@@ -2,7 +2,7 @@ node default {
   include user
   include ssh
 #  include ruby
-  include apache
+  include apache2
 }
 class { 'fail2ban':
   config_file_template     => "fail2ban/${::lsbdistcodename}/etc/fail2ban/jail.conf.erb",
