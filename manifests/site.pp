@@ -2,7 +2,7 @@ node default {
   include user
   include ssh
 #  include ruby
-  include dirs
+  include docroots
   include apache
 }
 class { 'apache':
