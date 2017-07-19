@@ -12,6 +12,10 @@ apache::vhost { 'staging.bifma':
   port          => '80',
   docroot       => '/srv/staging_bifma/current/public',
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 31ac17554102d63305dcbe0a722167c3fb010f2f
 class { 'fail2ban':
   config_file_template     => "fail2ban/${::lsbdistcodename}/etc/fail2ban/jail.conf.erb",
   config_file_options_hash => {
