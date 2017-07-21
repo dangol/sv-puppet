@@ -1,5 +1,12 @@
+include ::apt
+
+::apt::ppa { 'ppa:brightbox/ruby-ng-experimental': }
+
 class { '::ruby':
-  ruby_package     => 'ruby2.2.5-full',
+  version        => '2.2.5',
+  switch         => true,
+  latest_release => true,
+  require        => Apt::Ppa['ppa:brightbox/ruby-ng-experimental'],
   rubygems_package => 'rubygems2.6.4',
   gems_version     => 'latest',
 }
