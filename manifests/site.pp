@@ -1,9 +1,10 @@
 node default {
   include user
   include ssh
-#  include ruby
+  include ruby
   include docroots
-  include apache
+#  include apache
+  include passenger
 }
 class { 'apache':
   default_vhost => false,
@@ -21,7 +22,6 @@ class { 'fail2ban':
 }
 class clamav {
   package { 'clamav':
-    ensure => 'installed',
+  ensure => 'installed',
   }
 }
-class { 'nodejs': }
