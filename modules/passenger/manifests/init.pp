@@ -1,5 +1,4 @@
-node default {
-  class {'passenger': },
+class {'passenger':
   passenger_version      => '5.0.21',
 }
 # Class: passenger
