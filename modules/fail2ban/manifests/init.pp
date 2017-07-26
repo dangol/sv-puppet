@@ -30,10 +30,10 @@ class fail2ban (
   $service_enable           = true,
 
   $action                   = 'action_mb',
-  $bantime                  = 432000,
+  $bantime                  = 86400 #432000,
   $email                    = "fail2ban@${::domain}",
   $jails                    = ['ssh', 'ssh-ddos'],
-  $maxretry                 = 3,
+  $maxretry                 = 2,
   $whitelist                = ['127.0.0.1/8', '192.168.56.0/24'],
   $custom_jails             = undef,
 ) inherits ::fail2ban::params {

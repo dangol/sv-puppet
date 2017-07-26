@@ -1,6 +1,3 @@
-class {'passenger':
-  passenger_version      => '5.0.21',
-}
 # Class: passenger
 #
 # This class installs Passenger (mod_rails) on your system.
