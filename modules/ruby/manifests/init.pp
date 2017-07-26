@@ -1,15 +1,3 @@
-include ::apt
-
-::apt::ppa { 'ppa:brightbox/ruby-ng-experimental': }
-
-class { '::ruby':
-  version        => '2.2.5',
-  switch         => true,
-  latest_release => true,
-  require        => Apt::Ppa['ppa:brightbox/ruby-ng-experimental'],
-  rubygems_package => 'rubygems2.6.4',
-  gems_version     => 'latest',
-}
 # Class: ruby
 #
 # This class installs Ruby and manages rubygems
