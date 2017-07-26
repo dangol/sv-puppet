@@ -38,10 +38,10 @@ class ssh {
   }    
   sshd_config { "ClientAliveInterval":
     ensure    => present,
-    value     => 900,
+    value     => "900",
   }    
   sshd_config { "ClientAliveCountMax":
     ensure    => present,
-    value     => 0,
+    value     => "0",
   }      
 }

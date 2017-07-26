@@ -1,7 +1,7 @@
 node default {
   include user
   include ssh
-  include ruby
+#  include ruby = ruby is installed from ppa by cloudinit
   include docroots
 #  include apache
   include passenger
