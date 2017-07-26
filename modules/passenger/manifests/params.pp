@@ -11,8 +11,8 @@
 # Sample Usage:
 #
 class passenger::params {
-  $package_ensure     = '3.0.21'
-  $passenger_version  = '3.0.21'
+  $package_ensure     = '5.0.21'
+  $passenger_version  = '5.0.21'
   $passenger_ruby     = '/usr/bin/ruby'
   $package_provider   = 'gem'
   $passenger_provider = 'gem'
@@ -27,10 +27,10 @@ class passenger::params {
     'debian': {
       $package_name           = 'passenger'
       $passenger_package      = 'passenger'
-      $gem_path               = '/var/lib/gems/1.8/gems'
-      $gem_binary_path        = '/var/lib/gems/1.8/bin'
-      $passenger_root         = "/var/lib/gems/1.8/gems/passenger-${passenger_version}"
-      $mod_passenger_location = "/var/lib/gems/1.8/gems/passenger-${passenger_version}/ext/apache2/mod_passenger.so"
+      $gem_path               = '/var/lib/gems/2.2.0/gems'
+      $gem_binary_path        = '/var/lib/gems/2.2.0/bin'
+      $passenger_root         = "/var/lib/gems/2.2.0/gems/passenger-${passenger_version}"
+      $mod_passenger_location = "/var/lib/gems/2.2.0/gems/passenger-${passenger_version}/ext/apache2/mod_passenger.so"
 
       # Ubuntu does not have libopenssl-ruby - it's packaged in libruby
       if $::lsbdistid == 'Debian' and $::lsbmajdistrelease <= 5 {
