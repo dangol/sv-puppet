@@ -13,7 +13,6 @@ apache::vhost { 'staging.bifma':
   port          => '80',
   docroot       => '/srv/staging_bifma/current/public',
   }
-}
 class clamav {
   package { 'clamav':
   ensure => 'installed',
