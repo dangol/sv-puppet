@@ -30,7 +30,7 @@ class fail2ban (
   $service_enable           = true,
 
   $action                   = 'action_mb',
-  $bantime                  = 86400 #432000,
+  $bantime                  = 86400, #432000,
   $email                    = "fail2ban@${::domain}",
   $jails                    = ['ssh', 'ssh-ddos'],
   $maxretry                 = 2,
