@@ -28,9 +28,10 @@ class passenger::params {
       $package_name           = 'passenger'
       $passenger_package      = 'passenger'
       $gem_path               = '/var/lib/gems/2.2.0/gems'
-      $gem_binary_path        = '/var/lib/gems/2.2.0/bin'
+      $gem_binary_path        = '/usr/bin/gem'
       $passenger_root         = "/var/lib/gems/2.2.0/gems/passenger-${passenger_version}"
-      $mod_passenger_location = "/var/lib/gems/2.2.0/gems/passenger-${passenger_version}/ext/apache2/mod_passenger.so"
+      $mod_passenger_location = "/var/lib/gems/2.2.0/gems/passenger-${passenger_version}/buildout/apache2/mod_passenger.so"
+#                                /var/lib/gems/2.2.0/gems/              passenger-5.0.21/buildout/apache2/mod_passenger.so
 
       # Ubuntu does not have libopenssl-ruby - it's packaged in libruby
       if $::lsbdistid == 'Debian' and $::lsbmajdistrelease <= 5 {
@@ -43,10 +44,10 @@ class passenger::params {
       $package_dependencies   = [ 'libcurl-devel', 'openssl-devel', 'zlib-devel' ]
       $package_name           = 'passenger'
       $passenger_package      = 'passenger'
-      $gem_path               = '/usr/lib/ruby/gems/1.8/gems'
-      $gem_binary_path        = '/usr/lib/ruby/gems/1.8/gems/bin'
-      $passenger_root         = "/usr/lib/ruby/gems/1.8/gems/passenger-${passenger_version}"
-      $mod_passenger_location = "/usr/lib/ruby/gems/1.8/gems/passenger-${passenger_version}/ext/apache2/mod_passenger.so"
+      $gem_path               = '/usr/lib/ruby/gems/2.2.0/gems'
+      $gem_binary_path        = '/usr/lib/ruby/gems/2.2.0/gems/bin'
+      $passenger_root         = "/usr/lib/ruby/gems/2.2.0/gems/passenger-${passenger_version}"
+      $mod_passenger_location = "/usr/lib/ruby/gems/2.2.0/gems/passenger-${passenger_version}/ext/apache2/mod_passenger.so"
     }
     'darwin':{
       $package_name           = 'passenger'
