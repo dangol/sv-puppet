@@ -1,0 +1,56 @@
+docroots per env:
+
+deploy@iad-staging-bos:~$ ls /srv/
+staging_bifma  staging_cdr  staging_mcf  staging_rapid_screen  staging_rsl  staging_ssp1  staging_toy  staging_toy2
+
+deploy@iad-staging-web:~$ ls /srv
+staging_bifma, staging_cdr, staging_mcf, staging_rapid_screen, staging_rsl, staging_ssp1, staging_toy, staging_toy2
+
+deploy@iad-staging-web-large:~$ ls /srv/
+staging_rapid_screen
+
+deploy@iad-svinquiries:~$ ls /srv/
+svinquiries
+
+deploy@iad-web-u14-01:~$ ls /srv/
+akebono, brio_goodbos, demo_miq, eastman, hanjin, lego, sabic, tomy, akplastics, bv_hk, demo_toy, eastman_ssp, hasbro, magnacolours, sac_trial, true, amcorplastics, byrne_electrical, designtex, efi, hasbro_goodbos, matsui, seagate, tse_industries, apple, cashew, dfecdr, efi_ssp, hohenstein, micro_pak, sgs_hk, unifi, applied_materials, cdr, dfecdr2, ehg, huntsman, n2, sheffield, valdese, arcane, cfp, dfe_consortium, ere_sri, ikea, n3, sherwin_williams, vendor_demo, arets, clusters, dfe_consortium2, franklin_intl, ikea_goodbos, n4, solegear, victor, ashland, cmd_supplier, disney, gbp, ikea_test, nike, ssp, wahshing, atlana, covestro, disney_cmd_demo, gintzler, ilsam, nikwax, sspdemo, weyerhaeuser, averydennison, daesung, disney_goodbos, gm, inemi_trial, oekotex_test, t_chip, wilsonart, azchem, demo, disney_spi, gm_demo, jsi, omniplastics, t_chip1,  xeikon, beautycounter, demo_apparel, disney_vendor, gradient, khaiel, polyone, t_chip2, zeller_gmelin, bosch_brakes, demo_auto, disney_wdpr, grilbond, knauf, pony, tchip_alpha, brightway, demo_goodbos, dongsung, gross_stabil, kurim, rapidscreen_demo, tchip_chipotle, brio, demo_lens3_1, dow, h3, kyungsung, rutland, tioliong
+
+deploy@iad-rapid-screen-web:~$ ls /srv/
+rapidscreen
+ DocumentRoot /srv/rapid_screen/current/public
+ DocumentRoot /srv/rapidscreen/current/public
+
+deploy@iad-nightly-u14-01:~$ ls /srv
+akebono            bv_hk             designtex        efi_ssp         huntsman      n2                sheffield         unifi
+akplastics         byrne_electrical  dfecdr           ehg             ikea          n3                sherwin_williams  valdese
+amcorplastics      cashew            dfecdr2          ere_sri         ikea_goodbos  n4                solegear          vendor_demo
+apple              cdr               dfe_consortium   franklin_intl   ikea_test     nike              srv               victor
+applied_materials  cfp               dfe_consortium2  gbp             ilsam         nikwax            ssp               wahshing
+arcane             clusters          disney           gintzler        inemi_trial   oekotex_test      sspdemo           weyerhaeuser
+arets              cmd_supplier      disney_cmd_demo  gm              jsi           omniplastics      staging_cdr       wilsonart
+ashland            covestro          disney_goodbos   gm_demo         khaiel        polyone           t_chip            xeikon
+atlana             daesung           disney_spi       gradient        knauf         pony              t_chip1           zeller_gmelin
+averydennison      demo              disney_vendor    grilbond        kurim         rapidscreen       t_chip2
+azchem             demo_apparel      disney_wdpr      gross_stabil    kyungsung     rapidscreen_demo  tchip_alpha
+beautycounter      demo_auto         dongsung         h3              lego          rutland           tchip_chipotle
+bosch_brakes       demo_goodbos      dow              hanjin          lost+found    sabic             tioliong
+brightway          demo_lens3_1      eastman          hasbro          magnacolours  sac_trial         tomy
+brio               demo_miq          eastman_ssp      hasbro_goodbos  matsui        seagate           true
+brio_goodbos       demo_toy          efi              hohenstein      micro_pak     sgs_hk            tse_industries
+
+deploy@iad-bos-u14-01:~$ ls /srv/
+akebono            brio_goodbos      demo_miq         eastman        hanjin          lego              rutland           tchip_chipotle
+akplastics         bv_hk             demo_toy         eastman_ssp    hasbro          magnacolours      sabic             tioliong
+amcorplastics      byrne_electrical  designtex        efi            hasbro_goodbos  matsui            sac_trial         tomy
+apple              cashew            dfecdr           efi_ssp        hohenstein      micro_pak         seagate           true
+applied_materials  cdr               dfecdr2          ehg            huntsman        n2                sgs_hk            tse_industries
+arcane             cfp               dfe_consortium   ere_sri        ikea            n3                sheffield         unifi
+arets              clusters          dfe_consortium2  franklin_intl  ikea_goodbos    n4                sherwin_williams  valdese
+ashland            cmd_supplier      disney           gbp            ikea_test       nike              solegear          vendor_demo
+atlana             covestro          disney_cmd_demo  gintzler       ilsam           nikwax            ssp               victor
+averydennison      daesung           disney_goodbos   gm             inemi_trial     oekotex_test      sspdemo           wahshing
+azchem             demo              disney_spi       gm_demo        jsi             omniplastics      staging_cdr       weyerhaeuser
+beautycounter      demo_apparel      disney_vendor    gradient       khaiel          polyone           t_chip            wilsonart
+bosch_brakes       demo_auto         disney_wdpr      grilbond       knauf           pony              t_chip1           xeikon
+brightway          demo_goodbos      dongsung         gross_stabil   kurim           rapidscreen       t_chip2           zeller_gmelin
+brio               demo_lens3_1      dow              h3             kyungsung       rapidscreen_demo  tchip_alpha
