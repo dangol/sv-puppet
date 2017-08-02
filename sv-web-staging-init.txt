@@ -1,0 +1,31 @@
+#cloud-config
+manage_etc_hosts: True
+hostname: "web-staging"
+fqdn: "web-staging.scivera.com"
+apt_sources:
+  - source: "ppa:brightbox/ruby-ng"
+apt_update: true
+apt_upgrade: true
+packages:
+ - clamav
+ - multitail
+ - git-core
+ - awscli
+ - tmpreaper
+ - fail2ban
+ - ruby2.2
+ - ruby2.2-dev
+
+runcmd:
+ - [ sh, -c, "apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10; echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.0.list; apt-get -y install mongodb-org-shell mongodb-org-tools" ]
+ - [ sh, -c, "wget https://apt.puppetlabs.com/puppet5-release-trusty.deb; dpkg -i puppet5-release-trusty.deb; apt-get update; apt-get -y install puppet-agent" ]
+ - aws s3 cp s3://sysboot/sv-key /root/.ssh/ --region us-east-1 --output text; chmod 400 /root/.ssh/sv-key
+ - echo "Host github.com\n  StrictHostKeyChecking no\n  IdentityFile /root/.ssh/sv-key\n" >> /root/.ssh/config
+ - BASE=/opt/puppet
+ - git clone git@github.com:dangol/sv-puppet.git $BASE
+ - cp -r $BASE/manifests/* /etc/puppetlabs/code/environments/production/manifests
+ - cp -r $BASE/modules/* /etc/puppetlabs/code/environments/production/modules
+ - echo "puppet apply:"
+ - [ sh, -c, "/opt/puppetlabs/bin/puppet apply /etc/puppetlabs/code/environments/production/manifests/web.pp" ]
+
+final_message: "Whew! That was a lot of work and now the system is finally up, after $UPTIME seconds"
